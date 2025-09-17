@@ -26,12 +26,17 @@ function addNumber(arr, num) {
 }
 
 // 2. Remove last
+// function removeLast(arr) {
+//   let newArr = [];
+//   let len = getLength(arr);
+//   for (let i = 0; i < len - 1; i++) {
+//     newArr[i] = arr[i]; // use pop() to remove last
+//   }
+//   return newArr;
+// }
 function removeLast(arr) {
-  let newArr = [];
-  let len = getLength(arr);
-  for (let i = 0; i < len - 1; i++) {
-    newArr[i] = arr[i]; // use pop() to remove last
-  }
+  let newArr = [...arr]; // copy so original is safe
+  newArr.pop();          // remove last element
   return newArr;
 }
 
