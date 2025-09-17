@@ -7,24 +7,36 @@ const buttonsContainer = document.getElementById("buttons-container");
 
 // Functions
 
-function addNumber(arr, num) {
-  let newArr = [];
-  for (let i = 0; i < getLength(arr); i++) {
-    newArr[i] = arr[i];
-  }
+// function addNumber(arr, num) {
+//   let newArr = [];
+//   for (let i = 0; i < getLength(arr); i++) {
+//     newArr[i] = arr[i];
+//   }
 
-  //push
-  newArr[getLength(arr)] = num;
+//   //push
+//   newArr[getLength(arr)] = num;
+//   return newArr;
+// }
+
+//Adding using buitin function
+function addNumber(arr, num) {
+  let newArr = [...arr]; // copy array
+  newArr.push(num);      // push built-in
   return newArr;
 }
 
 // 2. Remove last
+// function removeLast(arr) {
+//   let newArr = [];
+//   let len = getLength(arr);
+//   for (let i = 0; i < len - 1; i++) {
+//     newArr[i] = arr[i]; // use pop() to remove last
+//   }
+//   return newArr;
+// }
 function removeLast(arr) {
-  let newArr = [];
-  let len = getLength(arr);
-  for (let i = 0; i < len - 1; i++) {
-    newArr[i] = arr[i]; // use pop() to remove last
-  }
+  let newArr = [...arr]; // copy so original is safe
+  newArr.pop();          // remove last element
   return newArr;
 }
 
