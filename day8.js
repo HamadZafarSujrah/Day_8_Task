@@ -7,14 +7,21 @@ const buttonsContainer = document.getElementById("buttons-container");
 
 // Functions
 
-function addNumber(arr, num) {
-  let newArr = [];
-  for (let i = 0; i < getLength(arr); i++) {
-    newArr[i] = arr[i];
-  }
+// function addNumber(arr, num) {
+//   let newArr = [];
+//   for (let i = 0; i < getLength(arr); i++) {
+//     newArr[i] = arr[i];
+//   }
 
-  //push
-  newArr[getLength(arr)] = num;
+//   //push
+//   newArr[getLength(arr)] = num;
+//   return newArr;
+// }
+
+//Adding using buitin function
+function addNumber(arr, num) {
+  let newArr = [...arr]; // copy array
+  newArr.push(num);      // push built-in
   return newArr;
 }
 
